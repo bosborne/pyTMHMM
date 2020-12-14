@@ -13,14 +13,14 @@ Molecular Biology, pages 175-182, Menlo Park, CA, 1998. AAAI Press.
 # Why?
 
 [Dan Søndergaard](https://github.com/dansondergaard) is the original author of this 
-package and his repository is now [archived](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/about-archiving-repositories). Dan wrote this code for a few reasons:
+package and his repository is now [archived](https://github.com/dansondergaard/tmhmm.py). Dan wrote this code for a few reasons:
 
-- the source code is not available as part of the publication,
-- the downloadable binaries are Linux-only,
+- the source code is not available as part of the publication
+- the downloadable binaries are Linux-only
 - the downloadable binaries may not be redistributed, so it's not possible to
-  put them in a Docker image or a VM for other people to use,
+  put them in a Docker image or a VM for other people to use
 - the need to predict transmembrane helices on a large dataset, which rules
-  out the web service.
+  out the Web service
 
 This Python implementation includes a parser for the undocumented file format
 used to describe the model and a pretty fast Cython implementation of the
@@ -30,13 +30,13 @@ similar to the files produced by the original TMHMM implementation.
 # Incompatibilities
 
 * The original TMHMM implementation handles ambigious characters and gaps in an
-  undocumented way. However, tmhmm.py does not attempt to handle such
+  undocumented way. However, `tmhmm.py` does not attempt to handle such
   characters at all and will fail. A possible fix is to replace those
   characters with something also based on expert/domain knowledge.
 
 # Installation
 
-This package supports Python 3.5, 3.6, and 3.7. Install with:
+This package supports Python 3.5 or greater. Install with:
 
     $ pip install tmhmm.py
 
@@ -72,11 +72,11 @@ Say we have the following sequence in FASTA format in a file called `test.fa`:
     AASVILVRNKLSHVVDALSLAQATMSKVYQNLAWAIAYNVISIPIAAGVLLPQYDFAMTPSLSGGLMALSSIFVVSNSL
     LLQLHKSETSKNSL
 
-We can then run tmhmm.py on this file using the following command:
+We can then run `tmhmm.py` on this file using the following command:
 
-    $ tmhmm -m TMHMM2.0.model -f test.fa
+    $ tmhmm -f test.fa
 
-This produces a bunch of files. One is the summary:
+This produces three files. One is the summary:
 
     $ cat B9DFX7|1B|HMA8_ARATH.summary
     0-444: outside
@@ -121,7 +121,7 @@ the same naming scheme as the other output files.
 
 # API
 
-You can also use tmhmm.py as a library:
+You can also use `tmhmm.py` as a library:
 
     import tmhmm
     annotation, posterior = tmhmm.predict(sequence_string)
@@ -131,7 +131,7 @@ each label as a numpy array with shape `(len(sequence), 3)` where column 0, 1
 and 2 corresponds to being inside, transmembrane and outside, respectively.
 
 If you don't need the posterior probabilities set `compute_posterior=False`,
-this will save quite a lot of computation:
+this will save computation:
 
     annotation, posterior = tmhmm.predict(
         sequence_string, compute_posterior=False

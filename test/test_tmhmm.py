@@ -66,7 +66,7 @@ LLQLHKSETSKNSL'
             checksum, '43826e2c876aaae1237df4296fd4ad28', "Correct 128-bit checksum")
 
     def test_annotation(self):
-        annotation, posterior = tmhmm.predict(self.seq)
+        annotation = tmhmm.predict(self.seq, compute_posterior=False)
         self.assertEqual(annotation.count('M'), 64,
                          "Correct number of TM amino acids")
         self.assertEqual(annotation.count('O'), 445,
@@ -77,7 +77,7 @@ LLQLHKSETSKNSL'
                          3, "Correct number of TMs")
 
     def test_posterior(self):
-        annotation, posterior = tmhmm.predict(self.seq)
+        _, posterior = tmhmm.predict(self.seq)
         self.assertEqual(len(posterior), 883,
                          "Correct number of aa's in posterior")
 

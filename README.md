@@ -133,6 +133,6 @@ and 2 corresponds to being inside, transmembrane and outside, respectively.
 If you don't need the posterior probabilities set `compute_posterior=False`,
 this will save computation:
 
-    annotation, posterior = tmhmm.predict(
+    annotation = tmhmm.predict(
         sequence_string, compute_posterior=False
     )

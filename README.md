@@ -1,6 +1,6 @@
 # Introduction
 
-This repository houses a Python 3.5+ implementation of transmembrane helix
+pyTMHMM is a Python 3.5+ implementation of the transmembrane helix
 hidden Markov model ([TMHMM](http://www.cbs.dtu.dk/services/TMHMM/)) originally
 described in:
 
@@ -72,7 +72,7 @@ Say we have the following sequence in FASTA format in a file called `test.fa`:
     AASVILVRNKLSHVVDALSLAQATMSKVYQNLAWAIAYNVISIPIAAGVLLPQYDFAMTPSLSGGLMALSSIFVVSNSL
     LLQLHKSETSKNSL
 
-We can then run `tmhmm.py` on this file using the following command:
+We can then run `pyTMHMM` on this file using the following command:
 
     $ tmhmm -f test.fa
 
@@ -121,9 +121,9 @@ the same naming scheme as the other output files.
 
 # API
 
-You can also use `tmhmm.py` as a library:
+You can also use `pyTMHMM` as a library:
 
-    import tmhmm
+    import pyTMHMM
     annotation, posterior = tmhmm.predict(sequence_string)
 
 This returns the annotation as a string and the posterior probabilities for

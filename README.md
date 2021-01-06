@@ -38,7 +38,7 @@ similar to the files produced by the original TMHMM implementation.
 
 This package supports Python 3.5 or greater. Install with:
 
-    $ pip install tmhmm.py
+    $ pip install pyTMHMM
 
 # Usage
 

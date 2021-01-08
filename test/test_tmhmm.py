@@ -5,9 +5,9 @@ import sys
 import os
 import re
 testdir = os.path.dirname(__file__)
-srcdir = '../tmhmm'
+srcdir = '../pyTMHMM'
 sys.path.insert(0, os.path.abspath(os.path.join(testdir, srcdir)))
-import tmhmm
+import pyTMHMM
 
 
 class TestTMHMM(unittest.TestCase):
@@ -35,13 +35,13 @@ LLQLHKSETSKNSL'
         # Fasta file with id and description
         fastafile = os.path.join(testdir, 'test1.fa')
         try:
-            subprocess.run(['tmhmm',
+            subprocess.run(['pyTMHMM',
                             '-f',
                             fastafile],
                            check=True)
         except (subprocess.CalledProcessError) as exception:
             print(
-                "Error running tmmhmm -f {0}: {1}".format(fastafile, str(exception)))
+                "Error running pyTMHMM -f {0}: {1}".format(fastafile, str(exception)))
         with open(self.annotation) as infile:
             checksum = hashlib.md5(infile.read().encode()).hexdigest()
         self.remove_files()
@@ -52,13 +52,13 @@ LLQLHKSETSKNSL'
         # Fasta file with just id
         fastafile = os.path.join(testdir, 'test2.fa')
         try:
-            subprocess.run(['tmhmm',
+            subprocess.run(['pyTMHMM',
                             '-f',
                             fastafile],
                            check=True)
         except (subprocess.CalledProcessError) as exception:
             print(
-                "Error running tmmhmm -f {0}: {1}".format(fastafile, str(exception)))
+                "Error running pyTMHMM -f {0}: {1}".format(fastafile, str(exception)))
         with open(self.annotation) as infile:
             checksum = hashlib.md5(infile.read().encode()).hexdigest()
         self.remove_files()
@@ -66,7 +66,7 @@ LLQLHKSETSKNSL'
             checksum, '43826e2c876aaae1237df4296fd4ad28', "Correct 128-bit checksum")
 
     def test_annotation(self):
-        annotation = tmhmm.predict(self.seq, compute_posterior=False)
+        annotation = pyTMHMM.predict(self.seq, compute_posterior=False)
         self.assertEqual(annotation.count('M'), 64,
                          "Correct number of TM amino acids")
         self.assertEqual(annotation.count('O'), 445,
@@ -77,7 +77,7 @@ LLQLHKSETSKNSL'
                          3, "Correct number of TMs")
 
     def test_posterior(self):
-        _, posterior = tmhmm.predict(self.seq)
+        _, posterior = pyTMHMM.predict(self.seq)
         self.assertEqual(len(posterior), 883,
                          "Correct number of aa's in posterior")
 

@@ -44,7 +44,7 @@ def plot(posterior_file, outputfile):
 
     plt.figure(figsize=(16, 8))
     plt.title('Posterior probabilities')
-    plt.suptitle('tmhmm.py')
+    plt.suptitle('pyTMHMM')
     plt.plot(inside, label='inside', color='blue')
     plt.plot(membrane, label='transmembrane', color='red')
     plt.fill_between(range(len(inside)), membrane, color='red')

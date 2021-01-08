@@ -3,8 +3,8 @@ from collections import defaultdict
 import numpy as np
 import os.path
 
-from tmhmm.model import parse
-from tmhmm.hmm import viterbi, forward, backward
+from pyTMHMM.model import parse
+from pyTMHMM.hmm import viterbi, forward, backward
 
 
 GROUP_NAMES = ('i', 'm', 'o')

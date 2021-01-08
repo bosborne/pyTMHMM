@@ -30,7 +30,7 @@ similar to the files produced by the original TMHMM implementation.
 # Incompatibilities
 
 * The original TMHMM implementation handles ambigious characters and gaps in an
-  undocumented way. However, `tmhmm.py` does not attempt to handle such
+  undocumented way. However, `pyTMHMM` does not attempt to handle such
   characters at all and will fail. A possible fix is to replace those
   characters with something also based on expert/domain knowledge.
 

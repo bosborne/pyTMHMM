@@ -1,6 +1,6 @@
 # Introduction
 
-pyTMHMM is a Python 3.5+ implementation of the transmembrane helix
+pyTMHMM is a Python 3.5+ implementation of the transmembrane helix predictor using a
 hidden Markov model ([TMHMM](http://www.cbs.dtu.dk/services/TMHMM/)) originally
 described in:
 
@@ -23,7 +23,7 @@ package and his repository is now [archived](https://github.com/dansondergaard/t
   out the Web service
 
 This Python implementation includes a parser for the undocumented file format
-used to describe the model and a pretty fast Cython implementation of the
+used to describe the model and a fast Cython implementation of the
 Viterbi algorithm used to perform the annotation. The tool will output files
 similar to the files produced by the original TMHMM implementation.
 

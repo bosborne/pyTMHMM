@@ -1,3 +1,4 @@
+import pyTMHMM
 import hashlib
 import subprocess
 import unittest
@@ -7,14 +8,12 @@ import re
 testdir = os.path.dirname(__file__)
 srcdir = '../pyTMHMM'
 sys.path.insert(0, os.path.abspath(os.path.join(testdir, srcdir)))
-import pyTMHMM
 
 
 class TestTMHMM(unittest.TestCase):
     '''
-    Run tmhmm and check the *annotation file and results
+    Run pyTMHMM and check the *annotation file and results
     '''
-
     annotation = 'B9DFX7|1B|HMA8_ARATH.annotation'
     plot = 'B9DFX7|1B|HMA8_ARATH.plot'
     summary = 'B9DFX7|1B|HMA8_ARATH.summary'
@@ -38,7 +37,7 @@ LLQLHKSETSKNSL'
             subprocess.run(['pyTMHMM',
                             '-f',
                             fastafile],
-                           check=True)
+                            check=True)
         except (subprocess.CalledProcessError) as exception:
             print(
                 "Error running pyTMHMM -f {0}: {1}".format(fastafile, str(exception)))

@@ -8,7 +8,7 @@ E\. L.L. Sonnhammer, G. von Heijne, and A. Krogh. **A hidden Markov model for
 predicting transmembrane helices in protein sequences**. In J. Glasgow,
 T. Littlejohn, F. Major, R. Lathrop, D. Sankoff, and C. Sensen, editors,
 Proceedings of the Sixth International Conference on Intelligent Systems for
-Molecular Biology, pages 175-182, Menlo Park, CA, 1998. AAAI Press. PMID [17688314](https://pubmed.ncbi.nlm.nih.gov/17688314/)
+Molecular Biology, pages 175-182, Menlo Park, CA, 1998. AAAI Press. PMID [9783223](https://pubmed.ncbi.nlm.nih.gov/9783223/)
 
 # Why?
 

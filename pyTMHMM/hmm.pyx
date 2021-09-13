@@ -35,10 +35,11 @@ def viterbi(sequence,
     transitions = np.log(transitions)
     emissions = np.log(emissions)
 
+    # Divide by zero warning is likely here
     cdef np.ndarray[DTYPE_t, ndim=2] M = \
         np.zeros([2, no_states],dtype=DTYPE)
     cdef np.ndarray[np.int_t, ndim=2] P = \
-        np.zeros([no_observations, no_states], dtype=np.int)
+        np.zeros([no_observations, no_states], dtype=int)
 
     cdef unsigned int i, j, k, max_state, next_state, observation
     cdef double max_state_prob, prob

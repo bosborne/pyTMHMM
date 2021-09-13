@@ -1,4 +1,3 @@
-import pyTMHMM
 import hashlib
 import subprocess
 import unittest
@@ -6,9 +5,8 @@ import sys
 import os
 import re
 testdir = os.path.dirname(__file__)
-srcdir = '../pyTMHMM'
-sys.path.insert(0, os.path.abspath(os.path.join(testdir, srcdir)))
-
+sys.path.insert(0, os.path.abspath(os.path.dirname(testdir)))
+import pyTMHMM
 
 class TestTMHMM(unittest.TestCase):
     '''

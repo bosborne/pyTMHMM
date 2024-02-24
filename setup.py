@@ -33,6 +33,6 @@ setup(
     classifiers=[
         "Programming Language :: Python :: 3",
         "Topic :: Scientific/Engineering :: Bio-Informatics",
-        "License :: OSI Approved :: Apache Software License"
+        "License :: OSI Approved :: MIT License"
     ]
 )

@@ -6,7 +6,7 @@ import os
 import re
 testdir = os.path.dirname(__file__)
 sys.path.insert(0, os.path.abspath(os.path.dirname(testdir)))
-import pyTMHMM
+import pyTMHMM  # noqa: E402
 
 class TestTMHMM(unittest.TestCase):
     '''

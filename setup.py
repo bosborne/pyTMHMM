@@ -4,7 +4,7 @@ import numpy
 
 setup(
     name='pyTMHMM',
-    version='1.3.2',
+    version='1.3.3',
     author='Brian Osborne',
     author_email='bosborne@alum.mit.edu',
     description='A transmembrane helix finder.',

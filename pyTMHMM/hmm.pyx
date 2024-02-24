@@ -23,6 +23,7 @@ def viterbi(sequence,
     :return: a tuple consisting of the dynamic programming table and the
              optimal path.
     """
+    np.seterr(divide='ignore')
     sequence = sequence.upper()
 
     cdef int no_observations = len(sequence)

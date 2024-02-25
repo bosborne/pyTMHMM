@@ -4,7 +4,7 @@ import textwrap
 
 from .api import predict
 from .api import DEFAULT_MODEL
-from .model import parse
+from .model import parse  # noqa: F401
 from .utils import (
     dump_posterior_file,
     load_posterior_file,

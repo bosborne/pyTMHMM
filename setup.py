@@ -6,8 +6,9 @@ from setuptools.command.build_ext import build_ext as _build_ext
 
 class build_ext(_build_ext):
     """
-    Specify the directory for the .so file, without this the
-    *so file is found only in the build/ directory.
+    Override the finalize_options method to set self.build_lib to pyTMHMM/,
+    which specifies the directory where the .so file should be copied, 
+    otherwise the *so file stays in the build/ directory.
     """
     def finalize_options(self):
         _build_ext.finalize_options(self)

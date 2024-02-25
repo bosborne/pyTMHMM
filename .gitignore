@@ -1,4 +1,5 @@
 # Byte-compiled / optimized / DLL files
+NOTES.md
 __pycache__/
 *.py[cod]
 
@@ -11,7 +12,6 @@ env/
 build/
 develop-eggs/
 dist/
-downloads/
 eggs/
 lib/
 lib64/

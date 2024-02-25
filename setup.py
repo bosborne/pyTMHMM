@@ -25,7 +25,7 @@ setup(
     },
     ext_modules=[
         Extension(
-            'pyTMHMM.hmm',
+            name='pyTMHMM.hmm',
             sources=['pyTMHMM/hmm.pyx'],
             include_dirs=[numpy.get_include()],
         ),

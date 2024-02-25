@@ -13,7 +13,7 @@ class build_ext(_build_ext):
         self.build_lib = "."
 
 
-extensions = [
+ext = [
     Extension(
         "pyTMHMM.hmm",
         ["pyTMHMM/hmm.pyx"],
@@ -42,7 +42,7 @@ setup(
         "console_scripts": ["pyTMHMM=pyTMHMM.cli:cli"],
     },
     include_dirs=[numpy.get_include()],
-    ext_modules=cythonize(extensions),
+    ext_modules=cythonize(ext),
     cmdclass={"build_ext": build_ext},
     classifiers=[
         "Programming Language :: Python :: 3",

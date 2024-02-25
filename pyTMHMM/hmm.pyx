@@ -13,7 +13,7 @@ def viterbi(sequence,
             np.ndarray[DTYPE_t, ndim=2] transitions,
             np.ndarray[DTYPE_t, ndim=2] emissions,
             char_map, label_map, name_map):
-    """
+    """viterbi
     Compute the most probable path through the model given the sequence.
 
     This function implements Viterbi's algorithm in log-space.
@@ -76,7 +76,7 @@ def forward(sequence,
             np.ndarray[DTYPE_t, ndim=2] transitions,
             np.ndarray[DTYPE_t, ndim=2] emissions,
             char_map, label_map, name_map):
-    """
+    """forward
     Compute the probability distribution of states after observing the sequence.
 
     This function implements the scaled Forward algorithm.
@@ -126,7 +126,7 @@ def backward(sequence,
              np.ndarray[DTYPE_t, ndim=2] transitions,
              np.ndarray[DTYPE_t, ndim=2] emissions,
              char_map, label_map, name_map):
-    """
+    """backward
     Compute the probability of being in some state and generating the rest of
     the sequence.
 

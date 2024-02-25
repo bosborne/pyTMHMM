@@ -7,7 +7,7 @@ from setuptools.command.build_ext import build_ext as _build_ext
 class build_ext(_build_ext):
     """
     Specify the directory for the .so file, without this the
-    *so file is only in the build/ directory.
+    *so file is found only in the build/ directory.
     """
     def finalize_options(self):
         _build_ext.finalize_options(self)

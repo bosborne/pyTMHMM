@@ -10,7 +10,7 @@ T. Littlejohn, F. Major, R. Lathrop, D. Sankoff, and C. Sensen, editors,
 Proceedings of the Sixth International Conference on Intelligent Systems for
 Molecular Biology, pages 175-182, Menlo Park, CA, 1998. AAAI Press. PMID [9783223](https://pubmed.ncbi.nlm.nih.gov/9783223/)
 
-# Why?
+# History
 
 [Dan Søndergaard](https://github.com/dansondergaard) is the original author of this 
 package and his repository is now [archived](https://github.com/dansondergaard/tmhmm.py). Dan wrote this code for a few reasons:
@@ -53,10 +53,9 @@ This package supports Python 3.5 or greater. Install with:
                               path to the model to use
         -p, --plot            plot posterior probabilies
 
-The `-p`/`--plot` option will only be available if `matplotlib` is installed
-and importable.
+The `-p`/`--plot` option requires `matplotlib`.
 
-Say we have the following sequence in FASTA format in a file called `test.fa`:
+The input sequence file should be in FASTA format, for example:
 
     >B9DFX7|1B|HMA8_ARATH Copper-transporting ATPase PAA2, chloroplastic  [Arabidopsis thaliana ]
     MASNLLRFPLPPPSSLHIRPSKFLVNRCFPRLRRSRIRRHCSRPFFLVSNSVEISTQSFESTESSIESVKSITSDTPIL
@@ -87,7 +86,7 @@ This produces three files. One is the summary:
     853-870: transmembrane helix
     871-882: inside
 
-An annotation in FASTA format:
+An annotation in FASTA-like format:
 
     $ cat B9DFX7|1B|HMA8_ARATH.annotation
     >B9DFX7|1B|HMA8_ARATH Copper-transporting ATPase PAA2, chloroplastic  [Arabidopsis thaliana ]

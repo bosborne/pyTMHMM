@@ -5,16 +5,18 @@ from setuptools.command.build_ext import build_ext as _build_ext
 
 
 class build_ext(_build_ext):
+    """
+    Specify the directory for the .so file
+    """
     def finalize_options(self):
         _build_ext.finalize_options(self)
-        # Specify the directory where the .so files should be copied
         self.build_lib = "."
 
 
 extensions = [
     Extension(
-        "pyTMHMM.hmm",  # Cython module name
-        ["pyTMHMM/hmm.pyx"],  # Cython source file
+        "pyTMHMM.hmm",
+        ["pyTMHMM/hmm.pyx"],
     )
 ]
 
@@ -28,7 +30,7 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/bosborne/pyTMHMM/",
     packages=["pyTMHMM"],
-    package_data={"pyTMHMM": ["TMHMM2.0.model", "*.so"]},
+    package_data={"pyTMHMM": ["TMHMM2.0.model"]},
     zip_safe=False,
     python_version=">=3.5",
     setup_requires=["setuptools>=18.0", "numpy>=1.9", "cython"],

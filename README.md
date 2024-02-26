@@ -19,8 +19,7 @@ package and his repository is now [archived](https://github.com/dansondergaard/t
 - the downloadable binaries are Linux-only
 - the downloadable binaries may not be redistributed, so it's not possible to
   put them in a Docker image or a VM for other people to use
-- the need to predict transmembrane helices on a large dataset, which rules
-  out the Web service
+- the need to predict transmembrane helices in a scripted, automated way
 
 This Python implementation includes a parser for the undocumented file format
 used to describe the model and a fast Cython implementation of the
@@ -71,11 +70,15 @@ The input sequence file should be in FASTA format, for example:
     AASVILVRNKLSHVVDALSLAQATMSKVYQNLAWAIAYNVISIPIAAGVLLPQYDFAMTPSLSGGLMALSSIFVVSNSL
     LLQLHKSETSKNSL
 
-We can then run `pyTMHMM` on this file using the following command:
+Example command:
 
     $ pyTMHMM -f test.fa
 
-This produces three files. One is the summary:
+This produces three files.
+
+## Summary file
+
+The coordinates of the predicted domains:
 
     $ cat B9DFX7|1B|HMA8_ARATH.summary
     0-444: outside
@@ -86,7 +89,9 @@ This produces three files. One is the summary:
     853-870: transmembrane helix
     871-882: inside
 
-An annotation in FASTA-like format:
+## Annotation file
+
+An annotated sequence in FASTA-like format:
 
     $ cat B9DFX7|1B|HMA8_ARATH.annotation
     >B9DFX7|1B|HMA8_ARATH Copper-transporting ATPase PAA2, chloroplastic  [Arabidopsis thaliana ]
@@ -103,8 +108,9 @@ An annotation in FASTA-like format:
     iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiMMMMMMMMMMMMMMMMMMMMMMMoooooooooMMMMMMMMMMMMMMMM
     MMiiiiiiiiiiii
 
-And finally a file containing the posterior probabilities for each label for
-plotting.
+## Posterior probabilies file
+
+A file containing the posterior probabilities for each label for plotting.
 
     $ cat B9DFX7|1B|HMA8_ARATH.plot
     inside membrane outside

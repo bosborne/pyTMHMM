@@ -56,7 +56,7 @@ The `-p`/`--plot` option requires `matplotlib`.
 
 The input sequence file should have one or more sequences in FASTA format, for example:
 
-    >B9DFX7|1B|HMA8_ARATH Copper-transporting ATPase PAA2, chloroplastic  [Arabidopsis thaliana ]
+    >B9DFX7|1B|HMA8_ARATH Copper-transporting ATPase PAA2, chloroplastic [Arabidopsis thaliana]
     MASNLLRFPLPPPSSLHIRPSKFLVNRCFPRLRRSRIRRHCSRPFFLVSNSVEISTQSFESTESSIESVKSITSDTPIL
     LDVSGMMCGGCVARVKSVLMSDDRVASAVVNMLTETAAVKFKPEVEVTADTAESLAKRLTESGFEAKRRVSGMGVAENV
     KKWKEMVSKKEDLLVKSRNRVAFAWTLVALCCGSHTSHILHSLGIHIAHGGIWDLLHNSYVKGGLAVGALLGPGRELLF

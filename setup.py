@@ -25,6 +25,7 @@ ext = [
 setup(
     name="pyTMHMM",
     version="1.3.3",
+    license="MIT License",
     author="Brian Osborne",
     author_email="bosborne@alum.mit.edu",
     description="A transmembrane helix finder.",

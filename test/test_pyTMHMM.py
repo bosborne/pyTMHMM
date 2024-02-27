@@ -9,7 +9,6 @@ testdir = os.path.dirname(__file__)
 sys.path.insert(0, os.path.abspath(os.path.dirname(testdir)))
 import pyTMHMM  # noqa: E402
 
-
 class TestTMHMM(unittest.TestCase):
     """
     Run pyTMHMM and check the *annotation file and results

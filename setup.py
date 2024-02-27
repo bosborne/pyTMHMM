@@ -43,7 +43,7 @@ setup(
     entry_points={
         "console_scripts": ["pyTMHMM=pyTMHMM.cli:cli"],
     },
-    include_dirs=[numpy.get_include()],
+    include_dirs=[numpy.get_include(),"."],
     ext_modules=cythonize(ext),
     cmdclass={"build_ext": build_ext},
     classifiers=[

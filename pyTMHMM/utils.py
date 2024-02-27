@@ -22,39 +22,37 @@ def dump_posterior_file(fileobj, posterior):
 
 
 def load_fasta_file(fileobj):
-    """Load a FASTA-formatted file.
+    """load_fasta_file
 
     Returns a list of `(id, description, sequence)` tuples. The `id` and
     `description` is extracted from the header line. The `id` is the part of
-    the header line before the first whitespace character and must be unique.
-    The `description` is everything coming after the first whitespace character
-    and does not need to be unique, and not all FASTA headers have descriptions.
+    the header line before the first whitespace character. The `description` 
+    is everything coming after the first whitespace character and not all 
+    FASTA headers have descriptions.
     """
     entries = []
-    header = None
-    sequence_parts = []
+    header = ''
+    sequence = ''
 
-    def append_entry(header, sequence_parts, entries):
+    def append_entry(header, sequence):
         arr = header.split(None, 1)
         if len(arr) == 1:
-            arr.append('')
-        sequence = ''.join(sequence_parts)
+            arr.append("")
         entries.append(FastaEntry(arr[0], arr[1], sequence))
 
-        header = None
-        sequence_parts = []
-
     for line in fileobj:
-        if line.startswith('#'):
-            continue
-        if line.startswith('>'):
-            if header is None:
+        if line.startswith(">"):
+            # Beginning of file
+            if header == '':
                 header = line[1:].strip()
             else:
-                append_entry(header, sequence_parts, entries)
+                append_entry(header, sequence)
+                sequence = ''
                 header = line[1:].strip()
         else:
-            sequence_parts.append(line.strip())
-    if header is not None:
-        append_entry(header, sequence_parts, entries)
+            sequence += line.strip()
+    # End of file
+    if header != '' and sequence != '':
+        append_entry(header, sequence)
     return entries
+

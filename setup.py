@@ -49,7 +49,7 @@ setup(
     cmdclass={"build_ext": build_ext},
     classifiers=[
         "Programming Language :: Python :: 3",
-        "Topic :: Scientific/Engineering :: Bio-Informatics",
+        "Topic :: Scientific/Engineering :: Bioinformatics",
         "License :: OSI Approved :: MIT License",
     ],
 )

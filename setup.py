@@ -24,7 +24,7 @@ ext = [
 
 setup(
     name="pyTMHMM",
-    version="1.3.3",
+    version="1.3.4",
     license="MIT License",
     author="Brian Osborne",
     author_email="bosborne@alum.mit.edu",

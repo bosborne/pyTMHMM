@@ -45,6 +45,7 @@ def load_fasta_file(fileobj):
             # Beginning of file
             if header == '':
                 header = line[1:].strip()
+            # Middle of file
             else:
                 append_entry(header, sequence)
                 sequence = ''

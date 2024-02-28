@@ -12,7 +12,7 @@ ext = [
 
 setup(
     name="pyTMHMM",
-    version="1.3.4",
+    version="1.3.5",
     license="MIT License",
     author="Brian Osborne",
     author_email="bosborne@alum.mit.edu",
@@ -36,7 +36,7 @@ setup(
     ext_modules=cythonize(ext),
     classifiers=[
         "Programming Language :: Python :: 3",
-        "Topic :: Scientific/Engineering :: Bioinformatics",
+        "Topic :: Scientific/Engineering :: Bio-Informatics",
         "License :: OSI Approved :: MIT License",
     ],
 )

@@ -54,7 +54,7 @@ This package supports Python 3.5 or greater. Install with:
 
 The `-p`/`--plot` option requires `matplotlib`.
 
-The input sequence file should have one or more sequences in FASTA format, for example:
+The input sequence file should have one sequence in FASTA format, for example:
 
     >B9DFX7|1B|HMA8_ARATH Copper-transporting ATPase PAA2, chloroplastic [Arabidopsis thaliana]
     MASNLLRFPLPPPSSLHIRPSKFLVNRCFPRLRRSRIRRHCSRPFFLVSNSVEISTQSFESTESSIESVKSITSDTPIL
@@ -74,7 +74,7 @@ Example command:
 
     $ pyTMHMM -f test.fa
 
-This produces three files for each sequence.
+This produces three files for the sequence.
 
 ## Summary file
 

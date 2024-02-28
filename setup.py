@@ -1,18 +1,6 @@
 import numpy
 from Cython.Build import cythonize
 from setuptools import setup, Extension
-from setuptools.command.build_ext import build_ext as _build_ext
-
-
-class build_ext(_build_ext):
-    """build_ext
-    Override the finalize_options method to set self.build_lib to pyTMHMM/,
-    specifying the directory where the .so file should be copied, 
-    otherwise the *so file stays in the build/ directory.
-    """
-    def finalize_options(self):
-        _build_ext.finalize_options(self)
-        self.build_lib = "."
 
 
 ext = [
@@ -46,7 +34,6 @@ setup(
     },
     include_dirs=[numpy.get_include(),"."],
     ext_modules=cythonize(ext),
-    cmdclass={"build_ext": build_ext},
     classifiers=[
         "Programming Language :: Python :: 3",
         "Topic :: Scientific/Engineering :: Bioinformatics",

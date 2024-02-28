@@ -2,6 +2,7 @@ import argparse
 import itertools
 import textwrap
 
+
 from .api import predict
 from .api import DEFAULT_MODEL
 from .model import parse  # noqa: F401
@@ -67,7 +68,6 @@ def cli():
         parser.add_argument('-p', '--plot', dest='plot_posterior',
                             action='store_true',
                             help='plot posterior probabilies')
-
     args = parser.parse_args()
 
     for entry in load_fasta_file(args.sequence_file):

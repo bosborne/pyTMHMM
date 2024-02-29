@@ -54,7 +54,7 @@ This package supports Python 3.5 or greater. Install with:
 
 The `-p`/`--plot` option requires `matplotlib`.
 
-The input sequence file should have one sequence in FASTA format, for example:
+The input sequence file should have one or more sequences in FASTA format, for example:
 
     >B9DFX7|1B|HMA8_ARATH Copper-transporting ATPase PAA2, chloroplastic [Arabidopsis thaliana]
     MASNLLRFPLPPPSSLHIRPSKFLVNRCFPRLRRSRIRRHCSRPFFLVSNSVEISTQSFESTESSIESVKSITSDTPIL
@@ -74,7 +74,7 @@ Example command:
 
     $ pyTMHMM -f test.fa
 
-This produces three files for the sequence in the Fast file.
+This produces three files for each sequence in the Fasta file, named by id.
 
 ## Summary file
 
@@ -121,8 +121,11 @@ A file containing the posterior probabilities for each label for plotting.
     0.126185012808 1.34197873962e-05 0.873801567405
     ...
 
-If the `-p` flag is set a plot in PDF format will also be produced, following
-the same naming scheme as the other output files.
+If the `-p` flag is set a plot in PDF format will also be produced.
+
+![TM domains in HMA8_ARATH](doc/HMA8_ARATH.png)
+
+[doc/HMA8_ARATH.pdf](doc/HMA8_ARATH.pdf)
 
 # API
 

@@ -19,7 +19,6 @@ var/
 *.annotation
 *.summary
 *.plot
-*.pdf
 
 # Cython-generated
 *.c

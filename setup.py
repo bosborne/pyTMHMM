@@ -21,7 +21,7 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/bosborne/pyTMHMM/",
     packages=["pyTMHMM"],
-    package_data={"pyTMHMM": ["TMHMM2.0.model"]},
+    package_data={"pyTMHMM": ["TMHMM2.0.model","hmm.pyx"]},
     zip_safe=False,
     python_version=">=3.5",
     setup_requires=["setuptools>=18.0", "numpy>=1.9", "cython"],

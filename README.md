@@ -37,42 +37,40 @@ similar to the files produced by the original TMHMM implementation.
 
 This package supports Python 3.5 or greater. Install with:
 
-    $ pip install pyTMHMM
+    > pip install pyTMHMM
 
 # Usage
 
-    $ pyTMHMM -h
-      usage: pyTMHMM [-h] -f SEQUENCE_FILE [-m MODEL_FILE] [-p]
+    > pyTMHMM -h
+    usage: pyTMHMM [-h] -f SEQUENCE_FILE [-m MODEL_FILE] [-p]
 
-      optional arguments:
-        -h, --help            show this help message and exit
-        -f SEQUENCE_FILE, --file SEQUENCE_FILE
-                              path to file in fasta format with sequences
-        -m MODEL_FILE, --model MODEL_FILE
-                              path to the model to use
-        -p, --plot            plot posterior probabilies
+    required arguments:
+    -f SEQUENCE_FILE, --file SEQUENCE_FILE
+                        path to file in fasta format with sequences
+
+    optional arguments:
+    -h, --help          show this help message and exit
+    -m MODEL_FILE, --model MODEL_FILE
+                        path to the model to use (default: TMHMM2.0.model)
+    -p, --plot          plot posterior probabilies
 
 The `-p`/`--plot` option requires `matplotlib`.
 
-The input sequence file should have one or more sequences in FASTA format, for example:
+The input sequence file should have one or more sequences in Fasta format, for example:
 
-    >B9DFX7|1B|HMA8_ARATH Copper-transporting ATPase PAA2, chloroplastic [Arabidopsis thaliana]
-    MASNLLRFPLPPPSSLHIRPSKFLVNRCFPRLRRSRIRRHCSRPFFLVSNSVEISTQSFESTESSIESVKSITSDTPIL
-    LDVSGMMCGGCVARVKSVLMSDDRVASAVVNMLTETAAVKFKPEVEVTADTAESLAKRLTESGFEAKRRVSGMGVAENV
-    KKWKEMVSKKEDLLVKSRNRVAFAWTLVALCCGSHTSHILHSLGIHIAHGGIWDLLHNSYVKGGLAVGALLGPGRELLF
-    DGIKAFGKRSPNMNSLVGLGSMAAFSISLISLVNPELEWDASFFDEPVMLLGFVLLGRSLEERAKLQASTDMNELLSLI
-    STQSRLVITSSDNNTPVDSVLSSDSICINVSVDDIRVGDSLLVLPGETFPVDGSVLAGRSVVDESMLTGESLPVFKEEG
-    CSVSAGTINWDGPLRIKASSTGSNSTISKIVRMVEDAQGNAAPVQRLADAIAGPFVYTIMSLSAMTFAFWYYVGSHIFP
-    DVLLNDIAGPDGDALALSLKLAVDVLVVSCPCALGLATPTAILIGTSLGAKRGYLIRGGDVLERLASIDCVALDKTGTL
-    TEGRPVVSGVASLGYEEQEVLKMAAAVEKTATHPIAKAIVNEAESLNLKTPETRGQLTEPGFGTLAEIDGRFVAVGSLE
-    WVSDRFLKKNDSSDMVKLESLLDHKLSNTSSTSRYSKTVVYVGREGEGIIGAIAISDCLRQDAEFTVARLQEKGIKTVL
-    LSGDREGAVATVAKNVGIKSESTNYSLSPEKKFEFISNLQSSGHRVAMVGDGINDAPSLAQADVGIALKIEAQENAASN
-    AASVILVRNKLSHVVDALSLAQATMSKVYQNLAWAIAYNVISIPIAAGVLLPQYDFAMTPSLSGGLMALSSIFVVSNSL
-    LLQLHKSETSKNSL
+    > head PAR3_HUMAN.fasta
+    >sp|O00254|PAR3_HUMAN Proteinase-activated receptor 3 OS=Homo sapiens OX=9606 GN=F2RL2 PE=1 SV=1
+    MKALIFAAAGLLLLLPTFCQSGMENDTNNLAKPTLPIKTFRGAPPNSFEEFPFSALEGWT
+    GATITVKIKCPEESASHLHVKNATMGYLTSSLSTKLIPAIYLLVFVVGVPANAVTLWMLF
+    FRTRSICTTVFYTNLAIADFLFCVTLPFKIAYHLNGNNWVFGEVLCRATTVIFYGNMYCS
+    ILLLACISINRYLAIVHPFTYRGLPKHTYALVTCGLVWATVFLYMLPFFILKQEYYLVQP
+    DITTCHDVHNTCESSSPFQLYYFISLAFFGFLIPFVLIIYCYAAIIRTLNAYDHRWLWYV
+    KASLLILVIFTICFAPSNIILIIHHANYYYNNTDGLYFIYLIALCLGSLNSCLDPFLYFL
+    MSKTRNHSTAYLTK
 
 Example command:
 
-    $ pyTMHMM -f test.fa
+    > pyTMHMM -f PAR3_HUMAN.fasta
 
 This produces three files for each sequence in the Fasta file, named by id.
 
@@ -80,50 +78,58 @@ This produces three files for each sequence in the Fasta file, named by id.
 
 The coordinates of the predicted domains:
 
-    $ cat B9DFX7|1B|HMA8_ARATH.summary
-    0-444: outside
-    445-467: transmembrane helix
-    468-820: inside
-    821-843: transmembrane helix
-    844-852: outside
-    853-870: transmembrane helix
-    871-882: inside
+    > cat sp|O00254|PAR3_HUMAN.summary 
+    0 97 outside
+    98 120 transmembrane helix
+    121 128 inside
+    129 151 transmembrane helix
+    152 165 outside
+    166 188 transmembrane helix
+    189 207 inside
+    208 230 transmembrane helix
+    231 259 outside
+    260 282 transmembrane helix
+    283 302 inside
+    303 322 transmembrane helix
+    323 336 outside
+    337 359 transmembrane helix
+    360 373 inside
 
 ## Annotation file
 
-An annotated sequence in FASTA-like format:
+An annotated sequence in Fasta-like format:
 
-    $ cat B9DFX7|1B|HMA8_ARATH.annotation
-    >B9DFX7|1B|HMA8_ARATH Copper-transporting ATPase PAA2, chloroplastic [Arabidopsis thaliana]
+    > cat sp|O00254|PAR3_HUMAN.annotation 
+    >sp|O00254|PAR3_HUMAN Proteinase-activated receptor 3 OS=Homo sapiens OX=9606 GN=F2RL2 PE=1 SV=1
     OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-    OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-    OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-    OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-    OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-    OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOMMMMMMMMMMMMMMMMMMMMMMMiiiiii
-    iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
-    iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
-    iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
-    iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
-    iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiMMMMMMMMMMMMMMMMMMMMMMMoooooooooMMMMMMMMMMMMMMMM
-    MMiiiiiiiiiiii
+    OOOOOOOOOOOOOOOOOOOMMMMMMMMMMMMMMMMMMMMMMMiiiiiiiiMMMMMMMMMMMMMMMMMMMMMMMoooooo
+    ooooooooMMMMMMMMMMMMMMMMMMMMMMMiiiiiiiiiiiiiiiiiiiMMMMMMMMMMMMMMMMMMMMMMMoooooo
+    oooooooooooooooooooooooMMMMMMMMMMMMMMMMMMMMMMMiiiiiiiiiiiiiiiiiiiiMMMMMMMMMMMMM
+    MMMMMMMooooooooooooooMMMMMMMMMMMMMMMMMMMMMMMiiiiiiiiiiiiii
 
 ## Posterior probabilies file
 
-A file containing the posterior probabilities for each label for plotting.
+A file containing the posterior probabilities for each label.
 
-    $ cat B9DFX7|1B|HMA8_ARATH.plot
+    > head sp|O00254|PAR3_HUMAN.plot 
     inside membrane outside
-    0.20341044516 0.0 0.79658955484
-    0.210104176071 2.77194446172e-08 0.78989579621
-    0.189291062167 3.11365191554e-08 0.810708906697
-    0.253334801857 7.17866017044e-07 0.746664480277
-    0.126185012808 1.34197873962e-05 0.873801567405
-    ...
+    0.6417636608794935 0.0 0.3582363391205064
+    0.693933311909457 0.006819179965744769 0.2992475081247982
+    0.3041488405999551 0.36045181385397806 0.3353993455460668
+    0.15867304975718463 0.5320740444690139 0.3092529057738015
+    0.011878169861623369 0.8126781067794638 0.1754437233589128
+    0.009103844612501565 0.7722962064006578 0.21859994898684057
+    0.0008287471596339259 0.6966223976666195 0.3025488551737467
+    0.0007860447761827514 0.7122010989508554 0.2870128562729619
+    0.0006349307902653272 0.712364526792757 0.28700054241697776
 
-If the `-p` flag is set a plot in PDF format will also be produced.
+## Plot
 
-[doc/HMA8_ARATH.pdf](doc/HMA8_ARATH.pdf)
+If the `-p` flag is set a plot in PDF format is made.
+
+!["TM domains in PAR3_HUMAN"](doc/PAR3_HUMAN.png)
+
+[doc/PAR3_HUMAN.pdf](doc/PAR3_HUMAN.pdf)
 
 # API
 

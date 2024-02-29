@@ -123,8 +123,6 @@ A file containing the posterior probabilities for each label for plotting.
 
 If the `-p` flag is set a plot in PDF format will also be produced.
 
-![TM domains in HMA8_ARATH](doc/HMA8_ARATH.png)
-
 [doc/HMA8_ARATH.pdf](doc/HMA8_ARATH.pdf)
 
 # API

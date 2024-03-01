@@ -109,7 +109,7 @@ An annotated sequence in Fasta-like format:
 
 ## Posterior probabilies file
 
-A file containing the posterior probabilities for each label.
+A file containing the posterior probabilities for each label:
 
     > head sp|O00254|PAR3_HUMAN.plot 
     inside membrane outside
@@ -125,7 +125,7 @@ A file containing the posterior probabilities for each label.
 
 ## Plot
 
-If the `-p` flag is set a plot in PDF format is made.
+If the `-p` flag is set a plot in PDF format is made:
 
 !["TM domains in PAR3_HUMAN"](doc/PAR3_HUMAN.png)
 

@@ -129,7 +129,7 @@ If the `-p` flag is set a plot in PDF format is made.
 
 !["TM domains in PAR3_HUMAN"](doc/PAR3_HUMAN.png)
 
-[doc/PAR3_HUMAN.pdf](doc/PAR3_HUMAN.pdf)
+[doc/sp|O00254|PAR3_HUMAN.pdf](doc/PAR3_HUMAN.pdf)
 
 # API
 

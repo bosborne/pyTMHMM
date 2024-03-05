@@ -107,7 +107,7 @@ An annotated sequence in Fasta-like format:
     oooooooooooooooooooooooMMMMMMMMMMMMMMMMMMMMMMMiiiiiiiiiiiiiiiiiiiiMMMMMMMMMMMMM
     MMMMMMMooooooooooooooMMMMMMMMMMMMMMMMMMMMMMMiiiiiiiiiiiiii
 
-## Posterior probabilies file
+## Posterior probabilities file
 
 A file containing the posterior probabilities for each label:
 

@@ -125,7 +125,7 @@ A file containing the posterior probabilities for each label:
 
 ## Plot
 
-If the `-p` flag is set a plot in PDF format is made:
+If the `-p` flag is set and `matplotlib` is installed a plot in PDF format is made:
 
 !["TM domains in PAR3_HUMAN"](doc/PAR3_HUMAN.png)
 

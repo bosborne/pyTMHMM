@@ -1,4 +1,4 @@
-# Introduction
+# pyTMHMM
 
 pyTMHMM is a Python 3.5+/Cython implementation of the transmembrane helix predictor using a
 hidden Markov model ([TMHMM](http://www.cbs.dtu.dk/services/TMHMM/)) originally
@@ -10,7 +10,7 @@ T. Littlejohn, F. Major, R. Lathrop, D. Sankoff, and C. Sensen, editors,
 Proceedings of the Sixth International Conference on Intelligent Systems for
 Molecular Biology, pages 175-182, Menlo Park, CA, 1998. AAAI Press. PMID [9783223](https://pubmed.ncbi.nlm.nih.gov/9783223/)
 
-# History
+## History
 
 [Dan Søndergaard](https://github.com/dansondergaard) is the original author of this 
 package and his repository is now [archived](https://github.com/dansondergaard/tmhmm.py). Dan wrote this code for a few reasons:
@@ -19,27 +19,27 @@ package and his repository is now [archived](https://github.com/dansondergaard/t
 - the downloadable binaries are Linux-only
 - the downloadable binaries may not be redistributed, so it's not possible to
   put them in a Docker image or a VM for other people to use
-- the need to predict transmembrane helices in a scripted, automated way
+- there is a need to predict transmembrane helices in a scripted, automated way
 
 This Python implementation includes a parser for the undocumented file format
 used to describe the model and a fast Cython implementation of the
 Viterbi algorithm used to perform the annotation. The tool will output files
 similar to the files produced by the original TMHMM implementation.
 
-# Incompatibilities
+## Incompatibilities
 
 * The original TMHMM implementation handles ambigious characters and gaps in an
   undocumented way. However, `pyTMHMM` does not attempt to handle such
   characters at all and will fail. A possible fix is to replace those
   characters with something also based on expert/domain knowledge.
 
-# Installation
+## Installation
 
 This package supports Python 3.5 or greater. Install with:
 
     > pip install pyTMHMM
 
-# Usage
+## Command Line Usage
 
     > pyTMHMM -h
     usage: pyTMHMM [-h] -f SEQUENCE_FILE [-m MODEL_FILE] [-p]
@@ -74,7 +74,7 @@ Example command:
 
 This produces three files for each sequence in the Fasta file, named by id.
 
-## Summary file
+### Summary file
 
 The coordinates of the predicted domains:
 
@@ -95,7 +95,7 @@ The coordinates of the predicted domains:
     337 359 transmembrane helix
     360 373 inside
 
-## Annotation file
+### Annotation file
 
 An annotated sequence in Fasta-like format:
 
@@ -107,7 +107,7 @@ An annotated sequence in Fasta-like format:
     oooooooooooooooooooooooMMMMMMMMMMMMMMMMMMMMMMMiiiiiiiiiiiiiiiiiiiiMMMMMMMMMMMMM
     MMMMMMMooooooooooooooMMMMMMMMMMMMMMMMMMMMMMMiiiiiiiiiiiiii
 
-## Posterior probabilities file
+### Posterior probabilities file
 
 A file containing the posterior probabilities for each label:
 
@@ -123,7 +123,7 @@ A file containing the posterior probabilities for each label:
     0.0007860447761827514 0.7122010989508554 0.2870128562729619
     0.0006349307902653272 0.712364526792757 0.28700054241697776
 
-## Plot
+### Optional plot file
 
 If the `-p` flag is set and `matplotlib` is installed a plot in PDF format is made:
 
@@ -131,7 +131,7 @@ If the `-p` flag is set and `matplotlib` is installed a plot in PDF format is ma
 
 [doc/sp|O00254|PAR3_HUMAN.pdf](doc/PAR3_HUMAN.pdf)
 
-# API
+## API Usage
 
 You can also use `pyTMHMM` as a library:
 
